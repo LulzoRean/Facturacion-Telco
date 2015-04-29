@@ -28,15 +28,16 @@ Partial Class config
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Name = New System.Windows.Forms.TextBox()
+        Me.Nombre = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Nit = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Address = New System.Windows.Forms.TextBox()
+        Me.Direccion = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Phone = New System.Windows.Forms.TextBox()
+        Me.Tel = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.ExaminarDB = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -97,12 +98,13 @@ Partial Class config
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Nombre de la empresa:"
         '
-        'Name
+        'Nombre
         '
-        Me.Name.Location = New System.Drawing.Point(184, 114)
-        Me.Name.Name = "Name"
-        Me.Name.Size = New System.Drawing.Size(228, 20)
-        Me.Name.TabIndex = 2
+        Me.Nombre.Enabled = False
+        Me.Nombre.Location = New System.Drawing.Point(184, 114)
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Size = New System.Drawing.Size(228, 20)
+        Me.Nombre.TabIndex = 2
         '
         'Label3
         '
@@ -115,6 +117,7 @@ Partial Class config
         '
         'Nit
         '
+        Me.Nit.Enabled = False
         Me.Nit.Location = New System.Drawing.Point(184, 140)
         Me.Nit.Name = "Nit"
         Me.Nit.Size = New System.Drawing.Size(228, 20)
@@ -129,12 +132,13 @@ Partial Class config
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Dirección:"
         '
-        'Address
+        'Direccion
         '
-        Me.Address.Location = New System.Drawing.Point(184, 166)
-        Me.Address.Name = "Address"
-        Me.Address.Size = New System.Drawing.Size(228, 20)
-        Me.Address.TabIndex = 6
+        Me.Direccion.Enabled = False
+        Me.Direccion.Location = New System.Drawing.Point(184, 166)
+        Me.Direccion.Name = "Direccion"
+        Me.Direccion.Size = New System.Drawing.Size(228, 20)
+        Me.Direccion.TabIndex = 6
         '
         'Label5
         '
@@ -145,15 +149,17 @@ Partial Class config
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Telefono:"
         '
-        'Phone
+        'Tel
         '
-        Me.Phone.Location = New System.Drawing.Point(184, 192)
-        Me.Phone.Name = "Phone"
-        Me.Phone.Size = New System.Drawing.Size(228, 20)
-        Me.Phone.TabIndex = 8
+        Me.Tel.Enabled = False
+        Me.Tel.Location = New System.Drawing.Point(184, 192)
+        Me.Tel.Name = "Tel"
+        Me.Tel.Size = New System.Drawing.Size(228, 20)
+        Me.Tel.TabIndex = 8
         '
         'Button3
         '
+        Me.Button3.Enabled = False
         Me.Button3.Location = New System.Drawing.Point(289, 218)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(123, 35)
@@ -170,6 +176,10 @@ Partial Class config
         Me.Button4.Text = "Cancelar"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'ExaminarDB
+        '
+        Me.ExaminarDB.Filter = "Base de datos Tlc|*.tlc"
+        '
         'config
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -177,13 +187,13 @@ Partial Class config
         Me.ClientSize = New System.Drawing.Size(424, 263)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Phone)
+        Me.Controls.Add(Me.Tel)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Address)
+        Me.Controls.Add(Me.Direccion)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Nit)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Name)
+        Me.Controls.Add(Me.Nombre)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -203,13 +213,14 @@ Partial Class config
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Name As System.Windows.Forms.TextBox
+    Friend WithEvents Nombre As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Nit As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Address As System.Windows.Forms.TextBox
+    Friend WithEvents Direccion As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Phone As System.Windows.Forms.TextBox
+    Friend WithEvents Tel As System.Windows.Forms.TextBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents ExaminarDB As System.Windows.Forms.OpenFileDialog
 End Class

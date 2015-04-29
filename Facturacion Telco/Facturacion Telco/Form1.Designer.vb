@@ -63,6 +63,7 @@ Partial Class Principal
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Clientlist)
+        Me.GroupBox1.Enabled = False
         Me.GroupBox1.Location = New System.Drawing.Point(123, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(385, 219)
@@ -200,6 +201,7 @@ Partial Class Principal
         '
         'Nextbt
         '
+        Me.Nextbt.Enabled = False
         Me.Nextbt.Location = New System.Drawing.Point(368, 237)
         Me.Nextbt.Name = "Nextbt"
         Me.Nextbt.Size = New System.Drawing.Size(140, 37)
@@ -209,6 +211,7 @@ Partial Class Principal
         '
         'Button1
         '
+        Me.Button1.Enabled = False
         Me.Button1.Location = New System.Drawing.Point(12, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(105, 40)
@@ -218,6 +221,7 @@ Partial Class Principal
         '
         'Button2
         '
+        Me.Button2.Enabled = False
         Me.Button2.Location = New System.Drawing.Point(12, 58)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(105, 40)
