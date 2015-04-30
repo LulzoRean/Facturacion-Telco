@@ -9,7 +9,6 @@ Module Globals
 
     Public cadena_conexion As String = "Data Source=" & DBRoute & ";Version=3;"
 
-
     Public Sub CargarEmpresa()
         Dim objConn As SQLiteConnection
         Dim objcommand As SQLiteCommand

@@ -114,8 +114,8 @@ Public Class config
             objCoomand.ExecuteNonQuery()
 
             'Clientes
-            objCoomand.CommandText = "CREATE TABLE clientes (id INTEGER Primary KEY, nombre VARCHAR(25), nit VARCHAR(15)," & _
-                                   "direccion VARCHAR(30), telefono NUMERIC);"
+            objCoomand.CommandText = "CREATE TABLE clientes (id INTEGER Primary KEY, nombre VARCHAR(30), nit VARCHAR(15)," & _
+                                   "direccion VARCHAR(40), telefono NUMERIC);"
             objCoomand.ExecuteNonQuery()
 
             'Facturas
@@ -145,5 +145,33 @@ Public Class config
         End Try
         MsgBox("Base de datos creada")
         TextBox1.Text = DBRoute
+    End Sub
+
+    Private Sub Nombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Nombre.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            Nit.Select()
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Nit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Nit.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            Direccion.Select()
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Direccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Direccion.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            Tel.Select()
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Tel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Tel.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            Button3.Select()
+            e.Handled = True
+        End If
     End Sub
 End Class

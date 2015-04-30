@@ -82,6 +82,7 @@ Partial Class config
         '
         'Button2
         '
+        Me.Button2.ForeColor = System.Drawing.Color.Navy
         Me.Button2.Location = New System.Drawing.Point(217, 55)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(177, 23)
