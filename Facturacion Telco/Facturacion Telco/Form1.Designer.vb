@@ -209,7 +209,6 @@ Partial Class Principal
         '
         'Nextbt
         '
-        Me.Nextbt.Enabled = False
         Me.Nextbt.Location = New System.Drawing.Point(368, 237)
         Me.Nextbt.Name = "Nextbt"
         Me.Nextbt.Size = New System.Drawing.Size(140, 37)

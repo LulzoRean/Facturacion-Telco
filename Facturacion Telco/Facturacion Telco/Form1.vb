@@ -18,7 +18,7 @@ Public Class Principal
                 GroupBox1.Enabled = True
                 Button1.Enabled = True
                 Button2.Enabled = True
-                LeerNombre()
+
             Else
                 config.ShowDialog()
                 GoTo 1
@@ -37,7 +37,9 @@ Public Class Principal
             objConn = New SQLiteConnection("Data Source=" & DBRoute & ";Version=3;")
             objConn.Open()
             objcommand = objConn.CreateCommand()
-            objcommand.CommandText = "SELECT nombre FROM clientes"
+            'select * from clientes where nombre like 'a%' order by nombre;
+            'objcommand.CommandText = "SELECT nombre FROM clientes"
+            objcommand.CommandText = "select * from clientes where nombre like '" & ClientTextNm.Text & "%' order by nombre"
             objReader = objcommand.ExecuteReader()
 
 
@@ -47,8 +49,8 @@ Public Class Principal
 
 
             If col.Count > 0 Then
-                ClientTextNm.AutoCompleteMode = AutoCompleteMode.SuggestAppend
                 ClientTextNm.AutoCompleteCustomSource = col
+                ClientTextNm.AutoCompleteMode = AutoCompleteMode.SuggestAppend
                 ClientTextNm.AutoCompleteSource = AutoCompleteSource.CustomSource
             End If
 
@@ -85,8 +87,14 @@ Public Class Principal
                     ClientNit.Text = list(0)
                     ClientDireccion.Text = list(1)
                     ClientTel.Text = list(2)
+                    ClientCondi.Select()
+                Else
+                    ClientNit.Text = ""
+                    ClientDireccion.Text = ""
+                    ClientTel.Text = ""
+                    ClientNit.Select()
                 End If
-                ClientCondi.Select()
+
             Catch ex As Exception
                 MsgBox(ex.ToString)
             Finally
@@ -131,5 +139,19 @@ Public Class Principal
             Nextbt.Select()
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub Nextbt_Click(sender As Object, e As EventArgs) Handles Nextbt.Click
+        If ClientTextNm.Text.Length = 0 Or ClientNit.Text.Length = 0 Then
+            MsgBox("Son necesarios los campos de 'Nombre de cliente' y 'Nit'")
+        Else
+
+
+
+        End If
+    End Sub
+
+    Private Sub ClientTextNm_TextChanged(sender As Object, e As EventArgs) Handles ClientTextNm.TextChanged
+        LeerNombre()
     End Sub
 End Class

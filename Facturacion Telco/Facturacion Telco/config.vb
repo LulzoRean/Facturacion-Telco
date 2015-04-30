@@ -54,11 +54,13 @@ Public Class config
                 objReader.Read()
 
                 If objReader.IsDBNull(0) Then
+                    'Si no existe la crea
                     objReader.Close()
                     objCoomand.CommandText = "Insert into empresa(nombre, nit, direccion, telefono)" & _
                    "values('" & Nombre.Text & "','" & Nit.Text & "','" & Direccion.Text & "','" & Tel.Text & "');"
                     objCoomand.ExecuteNonQuery()
                 Else
+                    'si existe la actualiza
                     objReader.Close()
                     objCoomand.CommandText = "UPDATE empresa " & _
                                             "SET nombre='" & Nombre.Text & "', nit='" & Nit.Text & _
