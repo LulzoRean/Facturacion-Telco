@@ -100,8 +100,10 @@ Partial Class config
         '
         'Nombre
         '
+        Me.Nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Nombre.Enabled = False
         Me.Nombre.Location = New System.Drawing.Point(184, 114)
+        Me.Nombre.MaxLength = 30
         Me.Nombre.Name = "Nombre"
         Me.Nombre.Size = New System.Drawing.Size(228, 20)
         Me.Nombre.TabIndex = 2
@@ -119,6 +121,7 @@ Partial Class config
         '
         Me.Nit.Enabled = False
         Me.Nit.Location = New System.Drawing.Point(184, 140)
+        Me.Nit.MaxLength = 15
         Me.Nit.Name = "Nit"
         Me.Nit.Size = New System.Drawing.Size(228, 20)
         Me.Nit.TabIndex = 4
@@ -134,8 +137,10 @@ Partial Class config
         '
         'Direccion
         '
+        Me.Direccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Direccion.Enabled = False
         Me.Direccion.Location = New System.Drawing.Point(184, 166)
+        Me.Direccion.MaxLength = 40
         Me.Direccion.Name = "Direccion"
         Me.Direccion.Size = New System.Drawing.Size(228, 20)
         Me.Direccion.TabIndex = 6
@@ -153,6 +158,7 @@ Partial Class config
         '
         Me.Tel.Enabled = False
         Me.Tel.Location = New System.Drawing.Point(184, 192)
+        Me.Tel.MaxLength = 15
         Me.Tel.Name = "Tel"
         Me.Tel.Size = New System.Drawing.Size(228, 20)
         Me.Tel.TabIndex = 8
