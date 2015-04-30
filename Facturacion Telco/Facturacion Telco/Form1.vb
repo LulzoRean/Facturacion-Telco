@@ -145,9 +145,42 @@ Public Class Principal
         If ClientTextNm.Text.Length = 0 Or ClientNit.Text.Length = 0 Then
             MsgBox("Son necesarios los campos de 'Nombre de cliente' y 'Nit'")
         Else
+            'Guardar DB Clientes
+            Dim objCon As SQLiteConnection
+            Dim objCoomand As SQLiteCommand
+            Dim objReader As SQLiteDataReader
+            Try
+                objCon = New SQLiteConnection("Data Source=" & DBRoute & ";Version=3;")
+                objCon.Open()
+                objCoomand = objCon.CreateCommand()
+
+                objCoomand.CommandText = "SELECT * from clientes"
+                objReader = objCoomand.ExecuteReader()
+               
+                objCoomand.CommandText = "Insert into clientes(nombre, nit, direccion, telefono)" & _
+                "values('" & ClientTextNm.Text & "','" & ClientNit.Text & "','" & ClientDireccion.Text & "','" & ClientTel.Text & "');"
+                objCoomand.ExecuteNonQuery()
+
+                GlobFacCliente = ClientTextNm.Text
+                GlobfacNit = ClientNit.Text
+                GlobFacDir = ClientDireccion.Text
+                GlobFacTel = ClientTel.Text
+                GlobFactFpago = ClientCondi.Text
+                GlobFactOC = ClientOc.Text
+                Dim reemplazar As String
+                reemplazar = Replace(DateTimePicker1.Value.ToShortDateString, "/", "        ")
+                GlobFactDate = reemplazar
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Exit Sub
+            Finally
+                If Not IsNothing(objCon) Then
+                    objCon.Close()
+                End If
 
 
-
+            End Try
         End If
     End Sub
 

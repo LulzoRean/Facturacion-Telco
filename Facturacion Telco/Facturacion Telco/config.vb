@@ -127,7 +127,7 @@ Public Class config
             objCoomand.ExecuteNonQuery()
 
             'Items Facturas
-            objCoomand.CommandText = "CREATE TABLE itemsfactura (id INTEGER Primary KEY, factura INTEGER, cantidad INTEGER," & _
+            objCoomand.CommandText = "CREATE TABLE itemsfactura (id INTEGER Primary KEY, factura INTEGER FOREIGN KEY REFERENCES facturas(consecutivo), cantidad INTEGER," & _
                                    "vunitario NUMERIC, descripcion INTEGER);"
             objCoomand.ExecuteNonQuery()
 

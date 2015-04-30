@@ -9,6 +9,14 @@ Module Globals
 
     Public cadena_conexion As String = "Data Source=" & DBRoute & ";Version=3;"
 
+    Public GlobFacCliente As String = ""
+    Public GlobfacNit As String = ""
+    Public GlobFacDir As String = ""
+    Public GlobFacTel As String = ""
+    Public GlobFactFpago As String = ""
+    Public GlobFactOC As String = ""
+    Public GlobFactDate As String = ""
+
     Public Sub CargarEmpresa()
         Dim objConn As SQLiteConnection
         Dim objcommand As SQLiteCommand
